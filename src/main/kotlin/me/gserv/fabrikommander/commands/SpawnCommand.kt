@@ -2,8 +2,6 @@ package me.gserv.fabrikommander.commands
 
 import com.mojang.brigadier.arguments.StringArgumentType
 import me.gserv.fabrikommander.data.SpawnDataManager
-import me.gserv.fabrikommander.data.PlayerDataManager
-import me.gserv.fabrikommander.data.spec.Pos
 import me.gserv.fabrikommander.utils.Context
 import me.gserv.fabrikommander.utils.Dispatcher
 import me.gserv.fabrikommander.utils.aqua
@@ -42,17 +40,6 @@ class SpawnCommand(val dispatcher: Dispatcher) {
                 false
             )
         } else {
-            PlayerDataManager.setBackPos(
-                player.uuid,
-                Pos(
-                    x = player.x,
-                    y = player.y,
-                    z = player.z,
-                    world = player.world.registryKey.value,
-                    yaw = player.yaw,
-                    pitch = player.pitch
-                )
-            )
 
             player.teleport(world, spawn.pos.x, spawn.pos.y, spawn.pos.z, spawn.pos.yaw, spawn.pos.pitch)
 
