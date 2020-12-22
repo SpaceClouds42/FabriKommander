@@ -1,6 +1,5 @@
 package me.gserv.fabrikommander.commands
 
-import me.gserv.fabrikommander.data.PlayerDataManager
 import me.gserv.fabrikommander.data.spec.Pos
 import me.gserv.fabrikommander.utils.Context
 import me.gserv.fabrikommander.utils.Dispatcher
@@ -58,18 +57,6 @@ class RtpCommand(val dispatcher: Dispatcher) {
         val overworld = player.server.getWorld(RegistryKey.of(Registry.DIMENSION, Identifier("minecraft:overworld")))
         val coordinates = generateCoordinates(overworld)
 
-        PlayerDataManager.setBackPos(
-            player.uuid,
-            Pos(
-                x = player.x,
-                y = player.y,
-                z = player.z,
-                world = player.world.registryKey.value,
-                yaw = player.yaw,
-                pitch = player.pitch
-            )
-        )
-
         player.teleport(
             overworld,
             coordinates[0].toDouble(),
@@ -78,6 +65,7 @@ class RtpCommand(val dispatcher: Dispatcher) {
             player.yaw,
             player.pitch
         )
+        
         context.source.sendFeedback(
             gray("[") +
             yellow("RTP") +
