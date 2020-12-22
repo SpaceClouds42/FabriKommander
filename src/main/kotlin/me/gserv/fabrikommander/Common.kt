@@ -26,16 +26,8 @@ object Common : ModInitializer {
         HomeCommand(dispatcher).register()
         HomesCommand(dispatcher).register()
         SetHomeCommand(dispatcher).register()
-
-        // TPA commands
-        TpaCommand(dispatcher).register()
-        TpaHereCommand(dispatcher).register()
-        TpAcceptCommand(dispatcher).register()
-        TpCancelCommand(dispatcher).register()
-        TpDenyCommand(dispatcher).register()
         
         // Teleport commands
-        BackCommand(dispatcher).register()
         RtpCommand(dispatcher).register()
 
         // Misc commands
