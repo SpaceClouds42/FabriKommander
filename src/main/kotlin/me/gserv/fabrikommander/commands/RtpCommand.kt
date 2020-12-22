@@ -1,6 +1,5 @@
 package me.gserv.fabrikommander.commands
 
-import me.gserv.fabrikommander.data.spec.Pos
 import me.gserv.fabrikommander.utils.Context
 import me.gserv.fabrikommander.utils.Dispatcher
 import me.gserv.fabrikommander.utils.gold
